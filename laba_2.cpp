@@ -47,8 +47,8 @@ Book& Book::operator+=(const Book& other) {
     if (writer_ == other.writer_) {
         for (const auto& work : other.vec_) {
             bool exists = false;
-            for (const auto& w : vec_) {
-                if (w == work) {
+            for (const auto& vec: vec_) {
+                if (vec == work) {
                     exists = true;
                     break;
                 }
@@ -134,4 +134,5 @@ void Book::print() const {
         if (i < vec_.size() - 1) std::cout << ",";
     }
     std::cout << "), " << pages_ << ", " << cost_ << "]" << std::endl;
+
 }
